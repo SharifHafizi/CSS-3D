@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-image: url("https://images.pexels.com/photos/1430677/pexels-photo-1430677.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin-left: auto;
+  margin-right: auto;
+}
+.galary {
+  width: 300px;
+  height: 200px;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: rotate 60s linear infinite;
+}
+@keyframes rotate {
+  0% {
+    transform: perspective(1200px) rotateX(0deg);
+  }
+  25% {
+    transform: perspective(1200px) rotateX(180deg);
+  }
+  50% {
+    transform: perspective(1200px) rotateY(0deg);
+  }
+  75% {
+    transform: perspective(1200px) rotateY(180deg);
+  }
+}
+.galary span img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.galary span {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-origin: center;
+  transform-style: preserve-3d;
+  transform: rotateX(calc(var(--i) * 45deg)) translateZ(280px);
+}
